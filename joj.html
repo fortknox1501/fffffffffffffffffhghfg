@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Download on Click</title>
+</head>
+<body>
+    <button id="downloadBtn">Download file</button>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            // relative path to the APK next to joj.html
+            const filePath = './running monkeys.apk';
+            const a = document.createElement('a');
+            a.href = encodeURI(filePath);
+            a.download = 'running monkeys.apk';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+    </script>
+</body>
+</html>
